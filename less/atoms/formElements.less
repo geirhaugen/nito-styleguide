@@ -1,0 +1,12 @@
+input[type=search]{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid @borderColor;
+  border-radius: 3px;
+  background: white;
+  padding: (@basePadding/3 - 1px) @basePadding/2;
+  .font(16px, 1);
+  & + input[type=button]{
+    margin-left: @basePadding/4;
+  }
+}

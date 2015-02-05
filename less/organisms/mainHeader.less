@@ -1,0 +1,21 @@
+.mainHeader{
+  padding-top: @basePadding;
+  .BP-small({ // SMALL BREAKPOINT
+      border-bottom: 5px solid @green;
+  });
+  &Tools{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .mastHead{
+    position: relative;
+  }
+  .mainHeaderLogo{
+    display: block;
+    max-width: 386px;
+    .BP-medium-down({ // SMALL BREAKPOINT
+        max-width: 90px;
+    });
+  }
+}

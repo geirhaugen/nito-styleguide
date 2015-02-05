@@ -1,0 +1,14 @@
+<% layout('_layouts/default') -%>
+<!-- Each module defined in gruntfile -->
+<% for(var i=0; i<modules.length; i++) {%>
+<div class="html-element">
+    <div class="styleguide-tools">
+        <button class="helper-toggler">Grid</button>
+        <button class="html-toggler">HTML</button>
+    </div>
+    <%- partial(modules[i]) %>
+    <xmp class="prettyprint">
+<%- partial(modules[i]) %>
+    </xmp>
+</div>
+<% } %>

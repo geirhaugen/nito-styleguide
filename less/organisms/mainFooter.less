@@ -1,0 +1,46 @@
+.mainFooter{
+  background: @greenDark;
+  padding-bottom: @basePadding;
+  p{
+    color: white;
+    .font(15px, 1);
+  }
+  .footerNavigationList{
+    border-bottom: 1px solid @greenDarkBorder;
+    color: white;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    font-family: @mainFontLight;
+    .container(0);
+    margin-bottom: @basePadding;
+    li{
+      display: inline-block;
+    }
+
+    a{
+      display: block;
+      padding: @baseLineHeight/2 @baseLineHeight;
+      color:white;
+      border-bottom: 0;
+      &:hover{
+        background-color: @greenDark;
+      }
+      &.current{
+        background-color: @greenDark;
+      }
+      .BP-small({ // SMALL BREAKPOINT
+        padding: @baseLineHeight/2;
+      });
+    }
+    .BP-small({ // SMALL BREAKPOINT
+      display: none;
+    });
+    .BP-medium-down({ // SMALL BREAKPOINT
+    li{
+      display: block;
+    }
+    });
+  }
+}
