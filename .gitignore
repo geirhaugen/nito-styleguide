@@ -1,0 +1,16 @@
+
+node_modules/*
+
+.idea/*
+
+.idea/*
+
+.idea/misc.xml
+
+.idea/modules.xml
+
+.idea/nito-styleguide.iml
+
+.idea/scopes/scope_settings.xml
+
+.idea/vcs.xml
