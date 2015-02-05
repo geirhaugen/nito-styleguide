@@ -24,6 +24,20 @@ module.exports = function(grunt) {
             }
           }
         },
+        copy:{
+            img: {
+                src: "img/*",
+                dest: "build/"
+            },
+            gfx: {
+                src: "gfx/*",
+                dest: "build/"
+            },
+            js:{
+                src: "js/*",
+                dest: "build/"
+            }
+        },
         notify: {
             less:{
                 options:{
@@ -63,5 +77,5 @@ module.exports = function(grunt) {
 
 
     
-    grunt.registerTask('default', ['less', 'ejs:all', 'notify:less', 'watch']);
+    grunt.registerTask('default', ['less', 'ejs:all', 'copy:img', 'copy:gfx', 'copy:js', 'notify:less', 'watch']);
 };
