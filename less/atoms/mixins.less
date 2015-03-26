@@ -1,6 +1,5 @@
 
-// Breakpoint mixins
-
+// BREAKPOINTS
 @breakpoint-small-pluss-one: (@breakpointSmall + 1/@baseFontSize);
 @breakpoint-medium-pluss-one: (@breakpointMedium + 1/@baseFontSize);
 @breakpoint-large-pluss-one: (@breakpointLarge + 1/@baseFontSize);
@@ -25,8 +24,9 @@
   @media screen and (min-width: @breakpoint-small-pluss-one) { @rules(); }
 }
 
-//Font import if using local font filesa
-.fontimport(@filename @fontweight, @fontstyle) { //filename without extension
+// FONT IMPORT
+//Font import if using local font files
+.fontimport(@filename, @fontweight, @fontstyle){
   @font-face {
     font-family: "@{filename}";
     src: url('fonts/@{filename}.eot');
@@ -38,22 +38,7 @@
     font-style: @fontstyle;
   }
 }
-.clearfix(){
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
-.container(@padded: @basePadding){
-  max-width: @maxWidth;
-  margin: 0 auto;
-  padding: 0 @padded;
-  .BP-small({ // SMALL BREAKPOINT
-      padding: 0 @padded/2;
-  });
-  .clearfix();
-}
+
 
 .establishTypography(){
   font-size: (@baseFontSize / 16) * 1em;
@@ -64,20 +49,40 @@
   });
 }
 
-//Vertical rhythm
-
+// VERTICAL RHYTHM
+// Define font size and number of @lineHeight in vertical ryhthm units
 .font(@size, @lineHeight: 1){
-  font-size: @size/@baseFontSize * 1em;
-  line-height: @baseLineHeight * @lineHeight;
-  .BP-small({ // SMALL BREAKPOINT
-    line-height: @baseLineHeightMobile * @lineHeight;
-  });
+  font-size: @size/@baseFontSize * 1rem;
+  line-height: (@baseLineHeight/@baseFontSize) * @lineHeight * 1rem;
 }
 
-.trailer(){
-  margin-bottom: @baseLineHeight;
+// STANDARD CLEARFIX TO CLEAR FLOATS
+.clearfix(){
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// CONTAINER
+// Adds max widths and padding to an element
+.container(@padded: @basePadding){
+  max-width: @maxWidth;
+  margin: 0 auto;
+  padding: 0 @padded;
   .BP-small({ // SMALL BREAKPOINT
-      margin-bottom: @baseLineHeightMobile;
+    padding: 0 @padded/2;
+  });
+  .clearfix();
+}
+
+// TRAILER
+// Adds 1 baselineunit margin after an element
+.trailer(@numberOfUnits: 1){
+  margin-bottom: (@baseLineHeight/@baseFontSize) * @numberOfUnits * 1rem;
+  .BP-small({ // SMALL BREAKPOINT
+      margin-bottom: (@baseLineHeightMobile/@baseFontSizeMobile) * 1rem;
   });
 }
 
@@ -157,5 +162,3 @@ body{
     display: none !important;
   });
 }
-
-

@@ -2,13 +2,8 @@
 .container{
   .container();
 }
-main{
-  //.baseline();
-}
 
-aside{
-  //.baseline();
-}
+
 .viewHelpers{
   [class*=col]{
     .baseline();
@@ -25,21 +20,18 @@ aside{
       }
     }
   }
-
   .col-one{
     width: (100/12 * 1%) - 1%;
     &.last{
       width: (100/12 * 1%);
     }
   }
-
   .col-two{
     width: (100/12 * 2%) - 1%;
     &.last{
       width: (100/12 * 2%);
     }
   }
-
   .col-three{
     width: (100/12 * 3%) - 1%;
     &.last{
@@ -69,5 +61,26 @@ aside{
     margin-right: 0;
   }
 });
+
+.asideBg{
+  .BP-medium-up({ // @MEDIUM UP BREAKPOINT
+    position: absolute;
+    top:0;
+    left:0;
+    bottom: 0;
+    width:33.3333%;
+    &:before{
+      content: '';
+      background: #f3f4f5;
+      right:0;
+      left: -200%;
+      display: block;
+      bottom: 0;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+    }
+  });
+}
 
 

@@ -1,20 +1,19 @@
 .frontpage-news{
-  padding-top: @basePadding;
-  padding-bottom: @basePadding;
+  .container;
   .BP-medium-up({ // @MEDIUM UP BREAKPOINT
     display: flex;
   });
-  article{
+  &__article{
     background-color: white;
     .BP-medium-up({ // @MEDIUM UP BREAKPOINT
       width: 100/3%;
     });
     margin-bottom: @basePadding;
   }
-  h2{
+  &__title{
     margin: @basePadding/3;
   }
-  img{
+  &__img{
     display: block;
   }
 }

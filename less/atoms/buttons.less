@@ -1,22 +1,20 @@
-button,
-input[type=button],
-[class*=btn]{
+.btn{
   -moz-appearance: none;
   -webkit-appearance: none;
   background: @greenDark;
   border: 0;
   border-radius: 3px;
   color:white;
+  display: inline-block;
   padding:  @basePadding/3 @basePadding;
   .font(16px, 1);
-}
-
-.btn-red{
-  background-color: @red;
-}
-
-.menuToggler{
-  position: absolute;
-  top: @basePadding;
-  right: @basePadding;
+  &--red{
+    background-color: @red;
+  }
+  &--menuToggler{
+    position: absolute;
+    top: @basePadding;
+    right: @basePadding;
+    .hide-for-large;
+  }
 }

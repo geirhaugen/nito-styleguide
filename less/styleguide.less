@@ -1,5 +1,5 @@
 @import "atoms/settings";
-@import "molecules/xmp";
+@import "molecules/markup";
 body{
   overflow-x: hidden;
 }
@@ -25,7 +25,7 @@ body{
   & > *:nth-child(2){
     transition: all .5s ease-out;
   }
-  xmp{
+  .markup{
     -webkit-transform: translateX(100%);
     -moz-transform: translateX(100%);
     -ms-transform: translateX(100%);
@@ -59,7 +59,7 @@ body{
       -o-transform: translateX(-20%);
       transform: translateX(-20%);
     }
-    & > xmp{
+    & > .markup{
       -webkit-transform: translateX(0%);
       -moz-transform: translateX(0%);
       -ms-transform: translateX(0%);
@@ -71,6 +71,10 @@ body{
   &:not(.activated){
     opacity: 1;
   }
+}
+
+pre.prettyprint{
+  border: 0 !important;
 }
 
 .separated{

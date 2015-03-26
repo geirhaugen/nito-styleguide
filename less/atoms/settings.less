@@ -8,7 +8,7 @@
 @maxWidth          : 70em;
 
 //Helpers
-@showBreakPoints   : true;  //Show the breakpoint helper in bottom right
+@showBreakPoints   : false;  //Show the breakpoint helper in bottom right
 @debug             : true;  //Show the baseline grid for vertical rhythm
 @showGrid          : true;  //Show background for col classes
 
@@ -19,7 +19,8 @@
 @baseFontSizeMobile: 16px;
 
 // Layout elements
-@basePadding: 24px;
+@basePadding: (@baseLineHeight / @baseFontSize) * 1rem;
+@px: 1/@baseFontSize * 1rem;
 
 //Colors
 @green            : #408060;
